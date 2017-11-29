@@ -1,0 +1,32 @@
+{
+  "name": "todos",
+  "version": "1.0.0",
+  "description": "Client application for todo tasks",
+  "scripts": {
+    "tsc": "tsc",
+    "electron": "electron",
+    "prestart": "tsc",
+    "start": "electron dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacek-lapinski/todos.git"
+  },
+  "keywords": [
+    "todos",
+    "tasks"
+  ],
+  "author": "Jacek Łapiński",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jacek-lapinski/todos/issues"
+  },
+  "homepage": "https://github.com/jacek-lapinski/todos#readme",
+  "dependencies": {
+    "electron": "^1.7.9"
+  },
+  "devDependencies": {
+    "typescript": "^2.6.2"
+  }
+}
