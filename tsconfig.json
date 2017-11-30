@@ -5,6 +5,8 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
-        "outDir": "dist"
+        "outDir": "dist",
+        "allowJs": true,
+        "jsx": "preserve"
     }
 }

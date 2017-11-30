@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "Client application for todo tasks",
   "scripts": {
-    "tsc": "tsc",
-    "electron": "electron",
-    "prestart": "tsc",
-    "start": "electron dist/main.js",
+    "build": "webpack --config webpack.config.js",
+    "prestart": "npm run-script build",
+    "start": "electron dist/window.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,9 +23,26 @@
   },
   "homepage": "https://github.com/jacek-lapinski/todos#readme",
   "dependencies": {
-    "electron": "^1.7.9"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "typescript": "^2.6.2"
+    "@types/electron": "^1.6.10",
+    "@types/node": "^8.0.53",
+    "@types/react": "^16.0.25",
+    "@types/react-dom": "^16.0.3",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015-node": "^6.1.1",
+    "babel-preset-react": "^6.24.1",
+    "electron": "^1.7.9",
+    "html-webpack-plugin": "^2.30.1",
+    "standard": "^10.0.3",
+    "standard-loader": "^6.0.1",
+    "ts-loader": "^3.2.0",
+    "tslint": "^5.8.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.6.2",
+    "webpack": "^3.9.1"
   }
 }
