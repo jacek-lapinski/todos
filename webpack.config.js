@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const commonConfig = {
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -28,6 +29,10 @@ const commonConfig = {
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader'
+            },
+            {
+                test: /\.(sass|scss)$/,
+                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
             }
         ]
     },
@@ -50,8 +55,14 @@ module.exports = [
     Object.assign(
         {
             target: 'electron-renderer',
-            entry: { app: './src/app.tsx' },
-            plugins: [new HtmlWebpackPlugin()]
+            entry: { app: './src/app.tsx', main: './src/styles/main.scss' },
+            plugins: [
+                new HtmlWebpackPlugin(),
+                new ExtractTextPlugin({
+                    filename: 'dist/[name].bundle.css',
+                    allChunks: true,
+                })
+            ]
         },
         commonConfig)
 ]
