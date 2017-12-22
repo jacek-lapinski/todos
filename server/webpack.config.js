@@ -10,17 +10,8 @@ const config = {
             {
                 test: /\.ts$/,
                 enforce: 'pre',
-                loader: ['ts-loader']
+                loader: ['ts-loader'],
             },
-            {
-                test: /\.js$/,
-                enforce: 'pre',
-                loader: 'standard-loader',
-                options: {
-                    typeCheck: true,
-                    emitErrors: true
-                }
-            }
         ]
     },
     resolve: {
@@ -29,11 +20,6 @@ const config = {
     target: "node",
     node: {
         __dirname: false
-    },
-    devServer: {
-        stats: "errors-only",
-        host: process.env.HOST,
-        port: process.env.PORT,
     }
 }
 
