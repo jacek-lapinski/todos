@@ -12,6 +12,12 @@ const config = {
                 enforce: 'pre',
                 loader: ['ts-loader'],
             },
+            {
+                test: /\.json$/, 
+                enforce: 'pre',
+                loader: ['json-loader'],
+                include: ['./config/development.config.json']
+            }
         ]
     },
     resolve: {

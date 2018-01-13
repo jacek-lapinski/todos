@@ -1,3 +1,3 @@
 export interface Dto {
-    id: string
+    id: string,
 }
