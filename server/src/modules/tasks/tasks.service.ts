@@ -15,7 +15,7 @@ export class TasksService {
       .then(task => this.convertToDto(task));
   }
 
-  public findAll(): Promise<TaskDto[]> {
+  public findAll(search: TasksSearchCriteria): Promise<TaskDto[]> {
     return this.repository.findAll({})
       .then((res) => res.map(item => this.convertToDto(item)));
   }
@@ -28,6 +28,12 @@ export class TasksService {
 
   public remove(id: string): Promise<void> {
     return this.repository.remove(id);
+  }
+
+  public toggle(id: string, date: Date, done: boolean): Promise<void> {
+    return new Promise((resolve, reject) => {
+      resolve();
+    })
   }
 
   private convertFromDto(dto: TaskDto): Task {
@@ -47,4 +53,9 @@ export class TasksService {
       priority: 0
     }
   }
+}
+
+export interface TasksSearchCriteria {
+  from?: Date,
+  to?: Date
 }
